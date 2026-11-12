@@ -1,0 +1,845 @@
+{
+ "transaction_model": {
+  "split": {
+   "train": [
+    "2025-01-01",
+    "2025-07-31",
+    927615,
+    11874
+   ],
+   "valid": [
+    "2025-08-01",
+    "2025-09-30",
+    283381,
+    4462
+   ],
+   "test": [
+    "2025-10-01",
+    "2025-12-31",
+    451533,
+    4607
+   ]
+  },
+  "window_days": 92,
+  "base_rate_test": 0.010203019491377153,
+  "threshold": 0.12994511559518077,
+  "target_precision": 0.9,
+  "best_iteration": 425,
+  "models": {
+   "lightgbm": {
+    "pr_auc": 0.9574844733104708,
+    "roc_auc": 0.999043437882318,
+    "budgets": {
+     "25": {
+      "alerts": 2300,
+      "precision": 0.9982608695652174,
+      "recall": 0.49837204254395484
+     },
+     "50": {
+      "alerts": 4600,
+      "precision": 0.8982608695652174,
+      "recall": 0.8968960277838073
+     },
+     "100": {
+      "alerts": 9200,
+      "precision": 0.48967391304347824,
+      "recall": 0.977859778597786
+     },
+     "200": {
+      "alerts": 18400,
+      "precision": 0.24864130434782608,
+      "recall": 0.9930540481875407
+     }
+    },
+    "at_threshold": {
+     "threshold": 0.12994511559518077,
+     "alerts": 4981,
+     "alerts_per_day": 54.1,
+     "true_positives": 4232,
+     "false_positives": 749,
+     "missed": 375,
+     "precision": 0.8496285886368199,
+     "recall": 0.9186021271977426,
+     "f1": 0.8827701293283271
+    }
+   },
+   "isolation_forest": {
+    "pr_auc": 0.23978606661146346,
+    "roc_auc": 0.8779003738789004,
+    "budgets": {
+     "25": {
+      "alerts": 2300,
+      "precision": 0.39260869565217393,
+      "recall": 0.1960060777078359
+     },
+     "50": {
+      "alerts": 4600,
+      "precision": 0.2584782608695652,
+      "recall": 0.2580855220316909
+     },
+     "100": {
+      "alerts": 9200,
+      "precision": 0.18608695652173912,
+      "recall": 0.3716084219665726
+     },
+     "200": {
+      "alerts": 18400,
+      "precision": 0.1259782608695652,
+      "recall": 0.5031473844150206
+     }
+    }
+   },
+   "logistic_baseline": {
+    "pr_auc": 0.11952005042986079,
+    "roc_auc": 0.8791647911053815,
+    "budgets": {
+     "25": {
+      "alerts": 2300,
+      "precision": 0.28043478260869564,
+      "recall": 0.14000434121988278
+     },
+     "50": {
+      "alerts": 4600,
+      "precision": 0.1658695652173913,
+      "recall": 0.16561753852832645
+     },
+     "100": {
+      "alerts": 9200,
+      "precision": 0.11326086956521739,
+      "recall": 0.22617755589320598
+     },
+     "200": {
+      "alerts": 18400,
+      "precision": 0.08413043478260869,
+      "recall": 0.3360104189277187
+     }
+    }
+   },
+   "rules_baseline": {
+    "pr_auc": 0.049924107418523045,
+    "roc_auc": 0.7082007986095764,
+    "budgets": {
+     "25": {
+      "alerts": 2300,
+      "precision": 0.1691304347826087,
+      "recall": 0.08443672672020838
+     },
+     "50": {
+      "alerts": 4600,
+      "precision": 0.12065217391304348,
+      "recall": 0.120468851747341
+     },
+     "100": {
+      "alerts": 9200,
+      "precision": 0.10130434782608695,
+      "recall": 0.20230084653787714
+     },
+     "200": {
+      "alerts": 18400,
+      "precision": 0.0825,
+      "recall": 0.3294985891035381
+     }
+    },
+    "at_threshold": {
+     "threshold": 0.5,
+     "alerts": 13098,
+     "alerts_per_day": 142.4,
+     "true_positives": 1163,
+     "false_positives": 11935,
+     "missed": 3444,
+     "precision": 0.088792182012521,
+     "recall": 0.25244193618406774,
+     "f1": 0.13137531770686248
+    }
+   }
+  },
+  "recall_by_typology": [
+   {
+    "typology": "circular",
+    "n": 371,
+    "recall": 0.9164420485175202
+   },
+   {
+    "typology": "layering",
+    "n": 216,
+    "recall": 0.9861111111111112
+   },
+   {
+    "typology": "mule_ring",
+    "n": 2614,
+    "recall": 0.9123947972456006
+   },
+   {
+    "typology": "structuring",
+    "n": 1406,
+    "recall": 0.9203413940256046
+   }
+  ],
+  "recall_by_stealth": [
+   {
+    "stealth": false,
+    "n": 3680,
+    "recall": 0.9453804347826087
+   },
+   {
+    "stealth": true,
+    "n": 927,
+    "recall": 0.8122977346278317
+   }
+  ],
+  "workload_curve": [
+   {
+    "threshold": 0.9999368827270193,
+    "alerts_per_day": 0.5,
+    "precision": 1.0,
+    "recall": 0.009984805730410246
+   },
+   {
+    "threshold": 0.9999306885265568,
+    "alerts_per_day": 0.6,
+    "precision": 1.0,
+    "recall": 0.011287171695246364
+   },
+   {
+    "threshold": 0.9999234800674259,
+    "alerts_per_day": 0.6,
+    "precision": 1.0,
+    "recall": 0.012806598654221837
+   },
+   {
+    "threshold": 0.9999165377140694,
+    "alerts_per_day": 0.7,
+    "precision": 1.0,
+    "recall": 0.014543086607336662
+   },
+   {
+    "threshold": 0.9999123818112153,
+    "alerts_per_day": 0.8,
+    "precision": 1.0,
+    "recall": 0.01649663555459084
+   },
+   {
+    "threshold": 0.999905930322076,
+    "alerts_per_day": 0.9,
+    "precision": 1.0,
+    "recall": 0.01866724549598437
+   },
+   {
+    "threshold": 0.9998971760304926,
+    "alerts_per_day": 1.1,
+    "precision": 1.0,
+    "recall": 0.021271977425656608
+   },
+   {
+    "threshold": 0.9998851325808877,
+    "alerts_per_day": 1.2,
+    "precision": 1.0,
+    "recall": 0.024310831343607554
+   },
+   {
+    "threshold": 0.9998781506390926,
+    "alerts_per_day": 1.4,
+    "precision": 1.0,
+    "recall": 0.02756674625569785
+   },
+   {
+    "threshold": 0.9998636584198586,
+    "alerts_per_day": 1.6,
+    "precision": 1.0,
+    "recall": 0.03125678315606686
+   },
+   {
+    "threshold": 0.9998471542948931,
+    "alerts_per_day": 1.8,
+    "precision": 1.0,
+    "recall": 0.035598003038853916
+   },
+   {
+    "threshold": 0.9998267316192387,
+    "alerts_per_day": 2.0,
+    "precision": 1.0,
+    "recall": 0.04059040590405904
+   },
+   {
+    "threshold": 0.9998028126413674,
+    "alerts_per_day": 2.3,
+    "precision": 1.0,
+    "recall": 0.046016930757542866
+   },
+   {
+    "threshold": 0.9997765771284318,
+    "alerts_per_day": 2.6,
+    "precision": 1.0,
+    "recall": 0.05252876058172346
+   },
+   {
+    "threshold": 0.9997560214010377,
+    "alerts_per_day": 3.0,
+    "precision": 1.0,
+    "recall": 0.05969177338832212
+   },
+   {
+    "threshold": 0.9997213705302644,
+    "alerts_per_day": 3.4,
+    "precision": 1.0,
+    "recall": 0.06772303017147818
+   },
+   {
+    "threshold": 0.999677646053128,
+    "alerts_per_day": 3.9,
+    "precision": 1.0,
+    "recall": 0.07705665291947038
+   },
+   {
+    "threshold": 0.9996206129392056,
+    "alerts_per_day": 4.4,
+    "precision": 1.0,
+    "recall": 0.08769264163229867
+   },
+   {
+    "threshold": 0.9995692920530298,
+    "alerts_per_day": 5.0,
+    "precision": 1.0,
+    "recall": 0.0996309963099631
+   },
+   {
+    "threshold": 0.9994929406875858,
+    "alerts_per_day": 5.7,
+    "precision": 1.0,
+    "recall": 0.1135228999348817
+   },
+   {
+    "threshold": 0.9993551351497465,
+    "alerts_per_day": 6.5,
+    "precision": 1.0,
+    "recall": 0.12893423051877578
+   },
+   {
+    "threshold": 0.9992441192899517,
+    "alerts_per_day": 7.3,
+    "precision": 1.0,
+    "recall": 0.14673323203820274
+   },
+   {
+    "threshold": 0.9990540039682844,
+    "alerts_per_day": 8.4,
+    "precision": 1.0,
+    "recall": 0.16691990449316257
+   },
+   {
+    "threshold": 0.9988185676692432,
+    "alerts_per_day": 9.5,
+    "precision": 0.9988571428571429,
+    "recall": 0.18971130887779467
+   },
+   {
+    "threshold": 0.9985432020367127,
+    "alerts_per_day": 10.8,
+    "precision": 0.9989949748743718,
+    "recall": 0.21575862817451705
+   },
+   {
+    "threshold": 0.9981553170537852,
+    "alerts_per_day": 12.3,
+    "precision": 0.9991158267020336,
+    "recall": 0.24527892337746907
+   },
+   {
+    "threshold": 0.9975830968507731,
+    "alerts_per_day": 14.0,
+    "precision": 0.9992229992229992,
+    "recall": 0.2791404384632082
+   },
+   {
+    "threshold": 0.9968055170075383,
+    "alerts_per_day": 15.9,
+    "precision": 0.9993169398907104,
+    "recall": 0.31756023442587367
+   },
+   {
+    "threshold": 0.9955945261197803,
+    "alerts_per_day": 18.1,
+    "precision": 0.9993993993993994,
+    "recall": 0.36118949424788366
+   },
+   {
+    "threshold": 0.9939346318081449,
+    "alerts_per_day": 20.6,
+    "precision": 0.9994720168954594,
+    "recall": 0.41089646190579554
+   },
+   {
+    "threshold": 0.9905174744766584,
+    "alerts_per_day": 23.4,
+    "precision": 0.9986072423398329,
+    "recall": 0.46689819839374863
+   },
+   {
+    "threshold": 0.9833358158286978,
+    "alerts_per_day": 26.6,
+    "precision": 0.9983673469387755,
+    "recall": 0.5309311916648578
+   },
+   {
+    "threshold": 0.9654272210249591,
+    "alerts_per_day": 30.3,
+    "precision": 0.9967707212055974,
+    "recall": 0.6029954417191231
+   },
+   {
+    "threshold": 0.923352797468065,
+    "alerts_per_day": 34.5,
+    "precision": 0.9914826498422713,
+    "recall": 0.682222704579987
+   },
+   {
+    "threshold": 0.7902233073017979,
+    "alerts_per_day": 39.2,
+    "precision": 0.9822518025513034,
+    "recall": 0.7688300412415889
+   },
+   {
+    "threshold": 0.4828478066651199,
+    "alerts_per_day": 44.6,
+    "precision": 0.9522184300341296,
+    "recall": 0.8478402431083134
+   },
+   {
+    "threshold": 0.19511094798408374,
+    "alerts_per_day": 50.7,
+    "precision": 0.8900557222460351,
+    "recall": 0.9014543086607336
+   },
+   {
+    "threshold": 0.08724139109715742,
+    "alerts_per_day": 57.7,
+    "precision": 0.8094968908988129,
+    "recall": 0.9324940308226611
+   },
+   {
+    "threshold": 0.04155942424806553,
+    "alerts_per_day": 65.6,
+    "precision": 0.7256915686599305,
+    "recall": 0.9509442153245062
+   },
+   {
+    "threshold": 0.022711646068251927,
+    "alerts_per_day": 74.6,
+    "precision": 0.6452599388379205,
+    "recall": 0.9617972650314739
+   },
+   {
+    "threshold": 0.013515583496174058,
+    "alerts_per_day": 84.9,
+    "precision": 0.5717577774932787,
+    "recall": 0.9693943998263512
+   },
+   {
+    "threshold": 0.008719849799022072,
+    "alerts_per_day": 96.6,
+    "precision": 0.5063590320765334,
+    "recall": 0.9765574126329498
+   },
+   {
+    "threshold": 0.0058828467241852,
+    "alerts_per_day": 109.8,
+    "precision": 0.44745695626360577,
+    "recall": 0.981549815498155
+   },
+   {
+    "threshold": 0.004130208410490169,
+    "alerts_per_day": 125.0,
+    "precision": 0.39509394572025053,
+    "recall": 0.985891035380942
+   },
+   {
+    "threshold": 0.002919121808070105,
+    "alerts_per_day": 142.1,
+    "precision": 0.3483481186907311,
+    "recall": 0.9887128283047536
+   },
+   {
+    "threshold": 0.0021105941230184127,
+    "alerts_per_day": 161.7,
+    "precision": 0.30677692617991126,
+    "recall": 0.9904493162578685
+   },
+   {
+    "threshold": 0.0015116695110779254,
+    "alerts_per_day": 183.9,
+    "precision": 0.2703469472191028,
+    "recall": 0.9928369871934013
+   },
+   {
+    "threshold": 0.0011014170346544529,
+    "alerts_per_day": 209.2,
+    "precision": 0.23797152655097162,
+    "recall": 0.9941393531582374
+   },
+   {
+    "threshold": 0.0007936828846410382,
+    "alerts_per_day": 238.0,
+    "precision": 0.20957427370729034,
+    "recall": 0.9958758411113523
+   },
+   {
+    "threshold": 0.0005800216175436554,
+    "alerts_per_day": 270.7,
+    "precision": 0.18440285920809574,
+    "recall": 0.9967440850879097
+   },
+   {
+    "threshold": 0.00042428920759917364,
+    "alerts_per_day": 307.9,
+    "precision": 0.16225375979665324,
+    "recall": 0.9976123290644671
+   },
+   {
+    "threshold": 0.0003066811260876034,
+    "alerts_per_day": 350.2,
+    "precision": 0.14279950341402856,
+    "recall": 0.9986976340351639
+   },
+   {
+    "threshold": 0.0002247277238756988,
+    "alerts_per_day": 398.4,
+    "precision": 0.12559345156889495,
+    "recall": 0.9991317560234426
+   },
+   {
+    "threshold": 0.00016766119228341471,
+    "alerts_per_day": 453.1,
+    "precision": 0.1104847801578354,
+    "recall": 0.9997829390058607
+   },
+   {
+    "threshold": 0.0001262778054599387,
+    "alerts_per_day": 515.4,
+    "precision": 0.0971299635182725,
+    "recall": 0.9997829390058607
+   },
+   {
+    "threshold": 9.609703143315369e-05,
+    "alerts_per_day": 586.3,
+    "precision": 0.0853880093433688,
+    "recall": 0.9997829390058607
+   },
+   {
+    "threshold": 7.361479421556376e-05,
+    "alerts_per_day": 666.9,
+    "precision": 0.07506763584210698,
+    "recall": 0.9997829390058607
+   },
+   {
+    "threshold": 5.7155751496084976e-05,
+    "alerts_per_day": 758.6,
+    "precision": 0.06599326599326599,
+    "recall": 0.9997829390058607
+   },
+   {
+    "threshold": 4.451030182248181e-05,
+    "alerts_per_day": 862.9,
+    "precision": 0.05802924764771825,
+    "recall": 1.0
+   },
+   {
+    "threshold": 3.4659185111281265e-05,
+    "alerts_per_day": 981.6,
+    "precision": 0.05101487149390413,
+    "recall": 1.0
+   }
+  ],
+  "explain_method": "shap.TreeExplainer"
+ },
+ "rules": [
+  {
+   "rule": "STRUCTURING",
+   "label": "Structuring (cash deposits just under the reporting threshold)",
+   "instances": 4137,
+   "accounts": 1283,
+   "true_instances": 368,
+   "precision": 0.08895334783659657,
+   "target_typologies": [
+    "structuring"
+   ],
+   "networks_in_scope": 110,
+   "networks_touched": 90,
+   "network_coverage": 0.8181818181818182
+  },
+  {
+   "rule": "CIRCULAR",
+   "label": "Circular transfers (funds return to the originator)",
+   "instances": 4930,
+   "accounts": 1169,
+   "true_instances": 1738,
+   "precision": 0.35253549695740366,
+   "target_typologies": [
+    "circular"
+   ],
+   "networks_in_scope": 120,
+   "networks_touched": 112,
+   "network_coverage": 0.9333333333333333
+  },
+  {
+   "rule": "RAPID_MOVEMENT",
+   "label": "Rapid movement of funds (in and out within 24 hours)",
+   "instances": 3581,
+   "accounts": 2033,
+   "true_instances": 2830,
+   "precision": 0.7902820441217537,
+   "target_typologies": [
+    "layering",
+    "mule_ring"
+   ],
+   "networks_in_scope": 290,
+   "networks_touched": 180,
+   "network_coverage": 0.6206896551724138
+  },
+  {
+   "rule": "FAN_IN",
+   "label": "Fan-in (many first-time senders in a short period)",
+   "instances": 458,
+   "accounts": 445,
+   "true_instances": 174,
+   "precision": 0.3799126637554585,
+   "target_typologies": [
+    "mule_ring"
+   ],
+   "networks_in_scope": 180,
+   "networks_touched": 75,
+   "network_coverage": 0.4166666666666667
+  }
+ ],
+ "accounts": {
+  "alert_threshold": 0.35,
+  "alerts": 725,
+  "alerts_per_week": 55.2,
+  "suspicious_accounts_active": 776,
+  "true_positives": 707,
+  "precision": 0.9751724137931035,
+  "recall": 0.9110824742268041,
+  "pr_auc_hybrid": 0.966308824787586,
+  "pr_auc_model_only": 0.9733980940250176,
+  "pr_auc_rules_only": 0.19010773537026487,
+  "by_priority": [
+   {
+    "priority": "Critical",
+    "alerts": 347,
+    "precision": 1.0
+   },
+   {
+    "priority": "High",
+    "alerts": 305,
+    "precision": 0.9868852459016394
+   },
+   {
+    "priority": "Medium",
+    "alerts": 73,
+    "precision": 0.8082191780821918
+   }
+  ]
+ },
+ "networks": {
+  "true_networks_active": 132,
+  "recovered": 118,
+  "recovery_rate": 0.8939393939393939,
+  "touched_by_alert_rate": 0.9545454545454546,
+  "mean_member_recall": 0.8698692721419993,
+  "detected_networks": 119,
+  "detected_mostly_true": 113,
+  "mean_purity": 0.9378896407154393,
+  "by_typology": [
+   {
+    "typology": "circular",
+    "active": 27,
+    "recovered": 23,
+    "rate": 0.8518518518518519
+   },
+   {
+    "typology": "layering",
+    "active": 14,
+    "recovered": 14,
+    "rate": 1.0
+   },
+   {
+    "typology": "mule_ring",
+    "active": 54,
+    "recovered": 46,
+    "rate": 0.8518518518518519
+   },
+   {
+    "typology": "structuring",
+    "active": 37,
+    "recovered": 35,
+    "rate": 0.9459459459459459
+   }
+  ],
+  "by_stealth": [
+   {
+    "stealth": false,
+    "active": 96,
+    "recovered": 94,
+    "rate": 0.9791666666666666
+   },
+   {
+    "stealth": true,
+    "active": 36,
+    "recovered": 24,
+    "rate": 0.6666666666666666
+   }
+  ]
+ },
+ "effectiveness": [
+  {
+   "strategy": "Hybrid risk score (model + rules + network)",
+   "accounts_reviewed": 100,
+   "per_week": 7.6,
+   "precision": 1.0,
+   "recall": 0.12886597938144329,
+   "networks_reached": 0.2196969696969697,
+   "suspicious_value_covered": 0.22631097856070131
+  },
+  {
+   "strategy": "Hybrid risk score (model + rules + network)",
+   "accounts_reviewed": 250,
+   "per_week": 19.0,
+   "precision": 1.0,
+   "recall": 0.32216494845360827,
+   "networks_reached": 0.4772727272727273,
+   "suspicious_value_covered": 0.6866793821612852
+  },
+  {
+   "strategy": "Hybrid risk score (model + rules + network)",
+   "accounts_reviewed": 500,
+   "per_week": 38.0,
+   "precision": 1.0,
+   "recall": 0.6443298969072165,
+   "networks_reached": 0.7651515151515151,
+   "suspicious_value_covered": 0.9325585958179761
+  },
+  {
+   "strategy": "Hybrid risk score (model + rules + network)",
+   "accounts_reviewed": 1000,
+   "per_week": 76.1,
+   "precision": 0.739,
+   "recall": 0.9523195876288659,
+   "networks_reached": 1.0,
+   "suspicious_value_covered": 0.9985724076454937
+  },
+  {
+   "strategy": "Model only",
+   "accounts_reviewed": 100,
+   "per_week": 7.6,
+   "precision": 1.0,
+   "recall": 0.12886597938144329,
+   "networks_reached": 0.3106060606060606,
+   "suspicious_value_covered": 0.15317909227978294
+  },
+  {
+   "strategy": "Model only",
+   "accounts_reviewed": 250,
+   "per_week": 19.0,
+   "precision": 1.0,
+   "recall": 0.32216494845360827,
+   "networks_reached": 0.6060606060606061,
+   "suspicious_value_covered": 0.5762055699385753
+  },
+  {
+   "strategy": "Model only",
+   "accounts_reviewed": 500,
+   "per_week": 38.0,
+   "precision": 1.0,
+   "recall": 0.6443298969072165,
+   "networks_reached": 0.8787878787878788,
+   "suspicious_value_covered": 0.9102529141324016
+  },
+  {
+   "strategy": "Model only",
+   "accounts_reviewed": 1000,
+   "per_week": 76.1,
+   "precision": 0.739,
+   "recall": 0.9523195876288659,
+   "networks_reached": 0.9924242424242424,
+   "suspicious_value_covered": 0.9977509894667029
+  },
+  {
+   "strategy": "AML rules only",
+   "accounts_reviewed": 100,
+   "per_week": 7.6,
+   "precision": 0.88,
+   "recall": 0.1134020618556701,
+   "networks_reached": 0.17424242424242425,
+   "suspicious_value_covered": 0.12006247248607076
+  },
+  {
+   "strategy": "AML rules only",
+   "accounts_reviewed": 250,
+   "per_week": 19.0,
+   "precision": 0.684,
+   "recall": 0.22036082474226804,
+   "networks_reached": 0.4015151515151515,
+   "suspicious_value_covered": 0.38533062822651204
+  },
+  {
+   "strategy": "AML rules only",
+   "accounts_reviewed": 500,
+   "per_week": 38.0,
+   "precision": 0.352,
+   "recall": 0.2268041237113402,
+   "networks_reached": 0.42424242424242425,
+   "suspicious_value_covered": 0.38721118894039414
+  },
+  {
+   "strategy": "AML rules only",
+   "accounts_reviewed": 1000,
+   "per_week": 76.1,
+   "precision": 0.213,
+   "recall": 0.27448453608247425,
+   "networks_reached": 0.4393939393939394,
+   "suspicious_value_covered": 0.5029473160521589
+  },
+  {
+   "strategy": "Static baseline (10k+ / high-risk corridor rule)",
+   "accounts_reviewed": 100,
+   "per_week": 7.6,
+   "precision": 0.06,
+   "recall": 0.007731958762886598,
+   "networks_reached": 0.045454545454545456,
+   "suspicious_value_covered": 0.13117178772203703
+  },
+  {
+   "strategy": "Static baseline (10k+ / high-risk corridor rule)",
+   "accounts_reviewed": 250,
+   "per_week": 19.0,
+   "precision": 0.052,
+   "recall": 0.01675257731958763,
+   "networks_reached": 0.09090909090909091,
+   "suspicious_value_covered": 0.24184468829834369
+  },
+  {
+   "strategy": "Static baseline (10k+ / high-risk corridor rule)",
+   "accounts_reviewed": 500,
+   "per_week": 38.0,
+   "precision": 0.148,
+   "recall": 0.09536082474226804,
+   "networks_reached": 0.21212121212121213,
+   "suspicious_value_covered": 0.4958969392928458
+  },
+  {
+   "strategy": "Static baseline (10k+ / high-risk corridor rule)",
+   "accounts_reviewed": 1000,
+   "per_week": 76.1,
+   "precision": 0.19,
+   "recall": 0.24484536082474226,
+   "networks_reached": 0.3939393939393939,
+   "suspicious_value_covered": 0.7564409630360933
+  }
+ ],
+ "time_to_detect": {
+  "networks_started_in_window": 87,
+  "networks_alerted": 87,
+  "median_hours": 34.27527777777778,
+  "p75_hours": 71.07347222222222,
+  "within_48h": 0.5517241379310345
+ }
+}

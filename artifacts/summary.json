@@ -1,0 +1,47 @@
+{
+ "scale": "full",
+ "seed": 20250115,
+ "n_accounts": 100000,
+ "n_transactions": 1662529,
+ "n_suspicious_transactions": 20943,
+ "n_networks": 520,
+ "n_network_accounts": 3338,
+ "first_ts": "2025-01-01 00:03:49",
+ "last_ts": "2025-12-31 23:59:46",
+ "synthetic": true,
+ "generated_at": "2026-11-12 20:11",
+ "period": [
+  "2025-01-01",
+  "2025-12-31"
+ ],
+ "train_period": [
+  "2025-01-01",
+  "2025-07-31"
+ ],
+ "validation_period": [
+  "2025-08-01",
+  "2025-09-30"
+ ],
+ "monitoring_window": [
+  "2025-10-01",
+  "2025-12-31"
+ ],
+ "window_days": 92,
+ "window_transactions": 451533,
+ "window_volume": 783715566.51,
+ "txn_threshold": 0.12994511559518077,
+ "alert_threshold": 0.35,
+ "flagged_transactions": 10665,
+ "flagged_amount": 69192411.05,
+ "alerts": 725,
+ "alert_exposure": 24204735.97,
+ "detected_networks": 119,
+ "networks_by_typology": {
+  "mule_ring": 180,
+  "circular": 120,
+  "structuring": 110,
+  "layering": 110
+ },
+ "stealth_networks": 111,
+ "runtime_seconds": 170.9
+}
