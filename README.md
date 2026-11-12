@@ -4,13 +4,14 @@
 
 <p align="center">
   <a href="https://github.com/muhammadzubair-data/ai-financial-crime-intelligence/actions/workflows/ci.yml"><img src="https://github.com/muhammadzubair-data/ai-financial-crime-intelligence/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://ai-financial-crime-intelligence.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-2a78d6" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/tests-31%20passing-1baf7a" alt="31 tests passing">
   <img src="https://img.shields.io/badge/data-100%25%20synthetic-e8912d" alt="Synthetic data">
   <img src="https://img.shields.io/badge/licence-MIT-6b7a8c" alt="MIT licence">
 </p>
 
-<!-- LIVE-DEMO -->
+<p align="center"><b><a href="https://ai-financial-crime-intelligence.streamlit.app/">Open the live demo</a></b></p>
 
 A working investigation platform for banks, fintechs, payment processors and compliance teams. It scores transactions, finds connected accounts and fraud rings, monitors AML patterns, and gives an investigator one place to review the evidence, record a decision and export a case report.
 
